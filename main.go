@@ -12,7 +12,9 @@ type SwearWordDetector struct {
 func NewCustomSwearWordDetector(words []string) *SwearWordDetector {
 	swearWords := make(map[string]struct{})
 	for _, word := range words {
-		swearWords[word] = struct{}{}
+		normalizedWord := strings.Map(persianNormalizer, word)
+		normalizedWord = strings.ReplaceAll(normalizedWord, " ", "")
+		swearWords[normalizedWord] = struct{}{}
 	}
 	return &SwearWordDetector{swearWords: swearWords}
 }
