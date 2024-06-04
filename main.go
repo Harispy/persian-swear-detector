@@ -1,4 +1,4 @@
-package main
+package detector
 
 import (
 	"bufio"
@@ -17,9 +17,8 @@ func NewCustomSwearWordDetector(words []string) *SwearWordDetector {
 	return &SwearWordDetector{swearWords: swearWords}
 }
 
-func (iwd *SwearWordDetector) ContainsIllegalWord(text string) bool {
+func (iwd *SwearWordDetector) ContainsSwearWord(text string) bool {
 	text = strings.Map(persianNormalizer, text)
-
 	scanner := bufio.NewScanner(strings.NewReader(text))
 	scanner.Split(bufio.ScanWords)
 

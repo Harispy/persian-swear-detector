@@ -1,4 +1,4 @@
-package main
+package detector
 
 func persianNormalizer(r rune) rune {
 	if val, ok := persianReplaceMap[r]; ok {
