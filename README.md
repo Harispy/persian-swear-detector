@@ -1,6 +1,6 @@
-# persian-swear-detector
+# Persian Swear Detector
 
-A very simple, high performance, ready to go Persian swear detector for golang.
+> A very simple, high performance, ready to go Persian swear detector for golang.
 also support some, not very complicated, normalization specially for persian
 
 ## Installation
